@@ -1,0 +1,13 @@
+.elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 20px;
+}
+
+.elements img {
+    width: 60px;
+    height: 60px;
+}
