@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import AllUsersItem from '../all-users-item';
 import './all-users.css';
 import axios from 'axios';
+import {Link, Route} from 'react-router-dom';
 
 type allUsersType = {
     update: (login:string)=> void
@@ -26,7 +27,7 @@ const  AllUsers = ({update}:allUsersType) => {
 
     const component:any[] = data.map((el)=>{
         return(
-            <li key = {el.id}  className="list-group-item"><AllUsersItem login = {el.login} avatar = {el.avatar_url} onClick = {()=>update(el.login)}/></li>
+            <li key = {el.id}  className="list-group-item"> <Link to = 'user'><AllUsersItem login = {el.login} avatar = {el.avatar_url} onClick = {()=>update(el.login)}/></Link></li>
         )
     })
 

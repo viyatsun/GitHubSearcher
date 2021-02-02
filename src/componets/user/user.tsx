@@ -30,7 +30,7 @@ const User = ({login, reposQuantity}:UserType) => {
         <React.Fragment>
         <div className = 'user'>
             <div>
-                <img alt = 'image' src={avatar}></img>
+                <img alt='picture' src={avatar}></img>
             </div>
             <ul className = 'user-bio'>
                 <li>{name}</li>
