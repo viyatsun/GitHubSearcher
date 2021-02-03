@@ -35,7 +35,7 @@ const RepoList = ({login}:RepoListType) =>{
         }
         
         return items.filter((item)=>{
-            return item.full_name.indexOf(term) > -1;
+            return item.full_name.toLowerCase().indexOf(term.toLowerCase()) > -1;
         })
     } 
     
