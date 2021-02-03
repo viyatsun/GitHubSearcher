@@ -9,7 +9,7 @@ type VisibleUserType = {
 const VisibleUser = ({login}:VisibleUserType) => {
     if (login === '') {
         return (
-            <h2>Please, select a user </h2>
+            <h2>Please, select a User </h2>
         )
     }
     return (

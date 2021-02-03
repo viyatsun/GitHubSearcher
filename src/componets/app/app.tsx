@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 import './app.css';
 
-import User from '../user';
-import RepoList from '../repo-list';
 import AllUsers from '../all-users';
-import VisibleUser from '../visibleUser';
+import VisibleUser from '../visible-user';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 
