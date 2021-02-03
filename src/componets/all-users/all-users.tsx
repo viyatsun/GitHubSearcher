@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import AllUsersItem from '../all-users-item';
 import './all-users.css';
 import axios from 'axios';
-import {Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 type allUsersType = {
     update: (login:string)=> void

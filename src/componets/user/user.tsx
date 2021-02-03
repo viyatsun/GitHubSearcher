@@ -4,11 +4,10 @@ import axios from 'axios';
 import './user.css';
 
 type UserType = {
-    login:string,
-    reposQuantity:number
+    login:string
 }
 
-const User = ({login, reposQuantity}:UserType) => {
+const User = ({login}:UserType) => {
 
     const [data, setData]  = useState<any>('');
 
@@ -24,7 +23,7 @@ const User = ({login, reposQuantity}:UserType) => {
     }},[login])
 
 
-    const {login:name, bio, followers, following, email, avatar_url:avatar,location } = data;
+    const {login:name, bio, followers, following, email, avatar_url:avatar,location, public_repos } = data;
     
     return(
         <React.Fragment>
@@ -34,7 +33,7 @@ const User = ({login, reposQuantity}:UserType) => {
             </div>
             <ul className = 'user-bio'>
                 <li>{name}</li>
-                <li>Repositories {reposQuantity}</li>
+                <li>Repositories {public_repos}</li>
                 <li>{email}</li>
                 <li>{location}</li>
                 <li>Folowers {followers} </li>

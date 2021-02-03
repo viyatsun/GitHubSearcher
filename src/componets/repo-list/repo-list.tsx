@@ -4,12 +4,11 @@ import axios from 'axios';
 import RepoListItem from '../repo-list-item';
 
 type RepoListType = {
-    login:string,
-    quantityUpdate:(length:number)=>void
+    login:string
 };
 
 
-const RepoList = ({login, quantityUpdate}:RepoListType) =>{
+const RepoList = ({login}:RepoListType) =>{
 
 
     const [data, setData]  = useState<any[]>([]);
@@ -26,7 +25,6 @@ const RepoList = ({login, quantityUpdate}:RepoListType) =>{
         .catch((err)=>console.log(err));
         return () =>{cancelled = true}
     }},[login]);
-
     
     const onChanged = (event:React.ChangeEvent<HTMLInputElement>) => {
         setTerm(event.target.value)
@@ -50,7 +48,7 @@ const RepoList = ({login, quantityUpdate}:RepoListType) =>{
         )   
     });
 
-    quantityUpdate(data.length)
+    
 
 
     return(
