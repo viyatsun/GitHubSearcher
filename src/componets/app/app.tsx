@@ -4,10 +4,11 @@ import './app.css';
 import AllUsers from '../all-users';
 import VisibleUser from '../visible-user';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
 
 
 const App = () => {
-    const [login, setLogin]  = useState<string>('');
+    const [login, setLogin]  = useLocalStorage('user','');
    
     const update = (login:string) => {
         setLogin(login)

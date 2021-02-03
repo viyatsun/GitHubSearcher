@@ -7,11 +7,10 @@ type RepoListType = {
     login:string
 };
 
-
 const RepoList = ({login}:RepoListType) =>{
 
 
-    const [data, setData]  = useState<any[]>([]);
+    const [data, setData]  = useState<object[]>([]);
     const [term, setTerm] = useState<string>('');
     
 
@@ -49,8 +48,6 @@ const RepoList = ({login}:RepoListType) =>{
     });
 
     
-
-
     return(
         <React.Fragment>
             <div className = 'input-field'>

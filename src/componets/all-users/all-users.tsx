@@ -3,6 +3,7 @@ import AllUsersItem from '../all-users-item';
 import './all-users.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
 
 type allUsersType = {
     update: (login:string)=> void
@@ -11,7 +12,7 @@ type allUsersType = {
 const  AllUsers = ({update}:allUsersType) => {
 
     const [data, setData]  = useState<any[]>([]);
-    const [term, setTerm] = useState<string>('');
+    const [term, setTerm] = useLocalStorage('searchUsers','');
     
     
     useEffect(()=>{
@@ -25,7 +26,7 @@ const  AllUsers = ({update}:allUsersType) => {
         return () =>{cancelled = true}
     }},[term])
 
-    const component:any[] = data.map((el)=>{
+    const component:object[] = data.map((el)=>{
         return(
             <li key = {el.id}  className="list-group-item"> <Link to = 'user'><AllUsersItem login = {el.login} avatar = {el.avatar_url} onClick = {()=>update(el.login)}/></Link></li>
         )
