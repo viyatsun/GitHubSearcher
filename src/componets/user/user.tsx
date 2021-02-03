@@ -40,9 +40,7 @@ const User = ({login}:UserType) => {
                 <li>Following {following}</li>
             </ul>
         </div>
-
         <div className = 'text'>{bio}</div>
-   
         </React.Fragment>
     )
 }
