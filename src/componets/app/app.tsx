@@ -19,7 +19,7 @@ const App = () => {
                 
                 <Router>
                     <Link to ='/'><h3>GitHub Searcher</h3></Link>
-                    <Route path = '/' exact render = {()=><AllUsers update = {update}/>} />
+                    <Route path = '/' render = {()=><AllUsers update = {update}/>} />
                     <Route path = '/user' exact render = {()=><VisibleUser login = {login}/>} />
                 </Router>
             </div>
